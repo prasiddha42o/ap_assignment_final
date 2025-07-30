@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainBorderPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nepaltourism.nepal_tourism3.controller.AdminDashboardController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="header">
+         <children>
+            <Label styleClass="app-title" text="Nepal Tourism Management System">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#handleLogout" styleClass="refresh-btn" text="Log Out" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox fx:id="sidebarVBox" spacing="10.0" styleClass="sidebar">
+         <children>
+            <Label fx:id="welcomeLabel" styleClass="sidebar-title" text="Welcome">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Separator />
+            <Button fx:id="touristsButton" maxWidth="1.7976931348623157E308" onAction="#handleTouristManagement" styleClass="nav-button" text="Tourists" />
+            <Button fx:id="guidesButton" maxWidth="1.7976931348623157E308" onAction="#handleGuideManagement" styleClass="nav-button" text="Guides" />
+            <Button fx:id="attractionsButton" maxWidth="1.7976931348623157E308" onAction="#handleViewAllAttractions" styleClass="nav-button" text="Attractions" />
+            <Button fx:id="bookingsButton" maxWidth="1.7976931348623157E308" onAction="#handleBookingManagement" styleClass="nav-button" text="Bookings" />
+            <Button fx:id="festivalsButton" maxWidth="1.7976931348623157E308" onAction="#handleFestivalDiscountManagement" styleClass="nav-button" text="Festivals" />
+            <Button fx:id="emergencyButton" maxWidth="1.7976931348623157E308" onAction="#handleEmergencyManagement" styleClass="emergency-button" text="Emergency" />
+            <Separator />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="15.0" right="15.0" top="20.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true">
+         <content>
+            <VBox spacing="20.0">
+               <children>
+                  <HBox spacing="20.0">
+                     <children>
+                        <VBox alignment="CENTER" spacing="10.0" styleClass="interactive-stat-card">
+                           <children>
+                              <Label styleClass="stat-title" text="Total Tourists">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalTouristsLabel" style="-fx-font-size: 32px; -fx-font-weight: bold;" text="1">
+                                 <font>
+                                    <Font name="System Bold" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Button onAction="#handleTouristManagement" styleClass="stat-action-btn" text="View All" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="10.0" styleClass="interactive-stat-card">
+                           <children>
+                              <Label styleClass="stat-title" text="Total Guides">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalGuidesLabel" style="-fx-font-size: 32px; -fx-font-weight: bold;" text="3">
+                                 <font>
+                                    <Font name="System Bold" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Button onAction="#handleGuideManagement" styleClass="stat-action-btn" text="View All" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="10.0" styleClass="interactive-stat-card">
+                           <children>
+                              <Label styleClass="stat-title" text="Total Attractions">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalAttractionsLabel" style="-fx-font-size: 32px; -fx-font-weight: bold;" text="2">
+                                 <font>
+                                    <Font name="System Bold" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Button onAction="#handleViewAllAttractions" styleClass="stat-action-btn" text="View All" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="10.0" styleClass="interactive-stat-card">
+                           <children>
+                              <Label styleClass="stat-title" text="Active Bookings">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalBookingsLabel" style="-fx-font-size: 32px; -fx-font-weight: bold;" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="32.0" />
+                                 </font>
+                              </Label>
+                              <Button onAction="#handleCreateNewBooking" styleClass="stat-action-btn" text="View All" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+
+                  <!-- Quick Actions Row -->
+                  <HBox spacing="20.0">
+                     <children>
+                        <VBox spacing="15.0" styleClass="quick-action-panel" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="panel-title" text="Quick Actions">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <GridPane hgap="15.0" vgap="15.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" />
+                                    <ColumnConstraints hgrow="ALWAYS" />
+                                 </columnConstraints>
+                                 <children>
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#handleTouristManagement" styleClass="quick-action-btn" text="➕ Add New Tourist" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#handleGuideManagement" styleClass="quick-action-btn" text="👨‍🏫 Add New Guide" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#handleViewAllAttractions" styleClass="quick-action-btn" text="🏔️ Add New Attraction" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#handleCreateNewBooking" styleClass="quick-action-btn" text="📅 Create New Booking" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#handleFestivalDiscountManagement" styleClass="festival-action-btn" text="🎉 Festival Discounts" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#handleSafetyAlerts" styleClass="safety-action-btn" text="⚠️ Safety Alerts" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                 </children>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+
+                  <!-- Recent Activities and Alerts Row -->
+                  <HBox spacing="20.0">
+                     <children>
+                        <VBox spacing="10.0" styleClass="activity-panel" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                 <children>
+                                    <Label styleClass="panel-title" text="Safety Alerts &amp; Notifications">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <Button onAction="#handleSafetyAlerts" styleClass="view-all-btn" text="View All" />
+                                 </children>
+                              </HBox>
+                              <ListView fx:id="alertsListView" prefHeight="200.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+
+                        <VBox prefHeight="265.0" prefWidth="462.0" spacing="10.0" styleClass="alert-panel" HBox.hgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+
+                  <!-- Popular Destinations and Guide Spotlight -->
+                  <HBox spacing="20.0">
+                     <children>
+                        <VBox spacing="15.0" styleClass="destinations-panel" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="panel-title" text="Popular Destinations">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <GridPane hgap="10.0" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" />
+                                    <ColumnConstraints hgrow="ALWAYS" />
+                                 </columnConstraints>
+                                 <children>
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#handleViewAllAttractions" styleClass="destination-btn" text="🏔️ Everest Base Camp" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#handleViewAllAttractions" styleClass="destination-btn" text="🥾 Annapurna Circuit" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#handleViewAllAttractions" styleClass="destination-btn" text="🏛️ Kathmandu Durbar" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#handleViewAllAttractions" styleClass="destination-btn" text="🏞️ Pokhara Lakes" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 </children>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                    <RowConstraints />
+                                 </rowConstraints>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+
+                        <VBox spacing="15.0" styleClass="guide-spotlight-panel" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="panel-title" text="Guide Spotlight">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="guide-card">
+                                       <children>
+                                          <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label styleClass="guide-name" text="Pemba Sherpa">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label styleClass="guide-specialty" text="High Altitude Specialist" />
+                                                <Label styleClass="guide-rating" text="⭐ 4.8/5 (15 years exp.)" />
+                                             </children>
+                                          </VBox>
+                                          <Button onAction="#handleGuideManagement" styleClass="view-profile-btn" text="View" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="guide-card">
+                                       <children>
+                                          <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label styleClass="guide-name" text="Sita Gurung">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label styleClass="guide-specialty" text="Cultural Tours Expert" />
+                                                <Label styleClass="guide-rating" text="⭐ 4.6/5 (8 years exp.)" />
+                                             </children>
+                                          </VBox>
+                                          <Button onAction="#handleGuideManagement" styleClass="view-profile-btn" text="View" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

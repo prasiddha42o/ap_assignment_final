@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nepaltourism.nepal_tourism3.controller.LoginController">
+
+    <center>
+        <HBox alignment="CENTER" spacing="0.0">
+            <children>
+
+                <!-- Left Panel -->
+                <VBox alignment="CENTER" spacing="20.0" styleClass="login-left-panel" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label styleClass="welcome-title" text="Welcome to">
+                            <font><Font name="System Bold" size="28.0" /></font>
+                        </Label>
+                        <Label styleClass="app-name" text="Nepal Tourism Management">
+                            <font><Font name="System Bold" size="24.0" /></font>
+                        </Label>
+                        <Label styleClass="tagline" text="Discover the Beauty of Nepal" textAlignment="CENTER" wrapText="true">
+                            <font><Font size="16.0" /></font>
+                        </Label>
+                        <VBox alignment="CENTER" spacing="10.0" styleClass="features-list">
+                            <children>
+                                <Label text="🏔️ Explore Majestic Mountains" />
+                                <Label text="🏛️ Discover Rich Heritage" />
+                                <Label text="🧾 Adventure Trekking" />
+                                <Label text="👨‍🏫 Expert Local Guides" />
+                            </children>
+                        </VBox>
+                        <ImageView fx:id="logoImageView" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                    <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0" /></padding>
+                </VBox>
+
+                <!-- Right Panel -->
+                <VBox alignment="CENTER" spacing="25.0" styleClass="login-right-panel" HBox.hgrow="NEVER">
+                    <children>
+
+                        <!-- Title -->
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <Label fx:id="welcomeLabel" styleClass="login-title" text="Welcome Back">
+                                    <font><Font name="System Bold" size="32.0" /></font>
+                                </Label>
+                                <Label fx:id="subtitleLabel" styleClass="login-subtitle" text="Sign in to your account">
+                                    <font><Font size="16.0" /></font>
+                                </Label>
+                            </children>
+                        </VBox>
+
+                        <!-- Login Form -->
+                        <VBox spacing="20.0" styleClass="login-form">
+                            <children>
+
+                                <VBox spacing="8.0">
+                                    <children>
+                                        <Label fx:id="usernameLabel" styleClass="field-label" text="Username">
+                                            <font><Font name="System Bold" size="14.0" /></font>
+                                        </Label>
+                                        <TextField fx:id="usernameField" promptText="Enter your username" styleClass="login-field" />
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="8.0">
+                                    <children>
+                                        <Label fx:id="passwordLabel" styleClass="field-label" text="Password">
+                                            <font><Font name="System Bold" size="14.0" /></font>
+                                        </Label>
+                                        <PasswordField fx:id="passwordField" onKeyPressed="#handleEnterKey" promptText="Enter your password" styleClass="login-field" />
+                                    </children>
+                                </VBox>
+
+                                <HBox alignment="CENTER_RIGHT" />
+
+                                <Label fx:id="errorLabel" styleClass="error-label" text="Error message" visible="false" wrapText="true" />
+
+                                <Button fx:id="loginButton" maxWidth="1.7976931348623157E308" onAction="#handleLogin" styleClass="login-button" text="Sign In">
+                                    <font><Font name="System Bold" size="16.0" /></font>
+                                </Button>
+
+                                <Separator />
+
+                                <VBox alignment="CENTER" spacing="10.0">
+                                    <children>
+                                        <Label text="Don't have an account?" />
+                                        <Button fx:id="registerButton" maxWidth="1.7976931348623157E308" onAction="#handleRegister" styleClass="register-button" text="Create Account">
+                                            <font><Font name="System Bold" size="14.0" /></font>
+                                        </Button>
+                                    </children>
+                                </VBox>
+
+                            </children>
+                        </VBox>
+
+                        <!-- Language Selector -->
+                        <HBox alignment="CENTER" spacing="10.0" />
+
+                    </children>
+                    <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0" /></padding>
+                </VBox>
+
+            </children>
+        </HBox>
+    </center>
+</BorderPane>

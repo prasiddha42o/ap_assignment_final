@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.nepaltourism.nepal_tourism3.controller.SafetyAlertController">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <children>
+                <Label text="Safety Alert Management" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Back to Dashboard" onAction="#handleBackToDashboard"
+                        style="-fx-font-size: 14px; -fx-background-color: #757575; -fx-text-fill: white;"/>
+            </children>
+        </HBox>
+
+        <HBox spacing="20">
+            <children>
+                <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: #f5f5f5;" HBox.hgrow="NEVER">
+                    <children>
+                        <Label text="Alert Information" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                        <GridPane hgap="10" vgap="10">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="NEVER" minWidth="120"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="250"/>
+                            </columnConstraints>
+                            <children>
+                                <Label text="Title:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                                <TextField fx:id="titleField" promptText="Alert title" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                                <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                                <TextArea fx:id="descriptionArea" promptText="Detailed description" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                                <Label text="Alert Type:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                <ComboBox fx:id="alertTypeCombo" promptText="Select type" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                                <Label text="Severity:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                                <ComboBox fx:id="severityCombo" promptText="Select severity" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                                <Label text="Affected Areas:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                                <TextField fx:id="affectedAreasField" promptText="Comma-separated areas" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                                <Label text="Start Date:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                                <DatePicker fx:id="startDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                                <Label text="End Date:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                                <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+                                <Label text="Active:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+                                <CheckBox fx:id="activeCheckBox" text="Currently active alert" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                            </children>
+                        </GridPane>
+
+                        <HBox spacing="10">
+                            <children>
+                                <Button text="Add Alert" onAction="#handleAddAlert"
+                                        style="-fx-font-size: 14px; -fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                                <Button text="Update" onAction="#handleUpdateAlert"
+                                        style="-fx-font-size: 14px; -fx-background-color: #2196F3; -fx-text-fill: white;"/>
+                                <Button text="Delete" onAction="#handleDeleteAlert"
+                                        style="-fx-font-size: 14px; -fx-background-color: #f44336; -fx-text-fill: white;"/>
+                                <Button text="Clear" onAction="#handleClearForm"
+                                        style="-fx-font-size: 14px; -fx-background-color: #607D8B; -fx-text-fill: white;"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10" style="-fx-padding: 20;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Active Alerts" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                        <TableView fx:id="alertTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="titleColumn" text="Title" prefWidth="150"/>
+                                <TableColumn fx:id="typeColumn" text="Type" prefWidth="100"/>
+                                <TableColumn fx:id="severityColumn" text="Severity" prefWidth="80"/>
+                                <TableColumn fx:id="areasColumn" text="Affected Areas" prefWidth="200"/>
+                                <TableColumn fx:id="startDateColumn" text="Start Date" prefWidth="100"/>
+                                <TableColumn fx:id="endDateColumn" text="End Date" prefWidth="100"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20"/>
+    </padding>
+</VBox>

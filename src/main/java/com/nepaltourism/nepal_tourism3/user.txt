@@ -1,0 +1,3 @@
+prasiddha,prasiddha708@gmail.com,admin123,admin
+tourist,tourist@gmail.com,tourist123,tourist
+

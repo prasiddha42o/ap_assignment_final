@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nepaltourism.nepal_tourism3.controller.FestivalManagementController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <children>
+                <Label text="Festival Discount Management">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Button fx:id="backButton" onAction="#handleBackToDashboard" text="Back to Dashboard" />
+            </children>
+        </HBox>
+
+        <HBox spacing="20.0">
+            <children>
+                <VBox prefWidth="400" spacing="15.0">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+
+                    <children>
+                        <Label text="Festival Information">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+
+                        <GridPane hgap="10.0" vgap="15.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="NEVER" minWidth="150.0" />
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Festival Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField fx:id="nameField" promptText="Festival name" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                <Label text="Start Date:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <DatePicker fx:id="startDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Label text="End Date:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                <Label text="Discount (%):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                <TextField fx:id="discountField" promptText="e.g., 10 for 10%" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+
+                        <HBox spacing="10.0">
+                            <children>
+                                <Button fx:id="addButton" onAction="#handleAddFestival" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Add Festival" />
+                                <Button fx:id="updateButton" onAction="#handleUpdateFestival" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Update" />
+                                <Button fx:id="deleteButton" onAction="#handleDeleteFestival" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Delete" />
+                                <Button fx:id="clearButton" onAction="#handleClearForm" style="-fx-background-color: #607D8B; -fx-text-fill: white;" text="Clear" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+
+                    <children>
+                        <Label text="Active Festival Discounts">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+
+                        <TableView fx:id="festivalTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="nameColumn" prefWidth="150.0" text="Festival Name" />
+                                <TableColumn fx:id="startDateColumn" prefWidth="100.0" text="Start Date" />
+                                <TableColumn fx:id="endDateColumn" prefWidth="100.0" text="End Date" />
+                                <TableColumn fx:id="discountColumn" prefWidth="80.0" text="Discount (%)" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

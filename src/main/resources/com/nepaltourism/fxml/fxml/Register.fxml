@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nepaltourism.nepal_tourism3.controller.RegisterController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="header">
+            <children>
+                <Label styleClass="page-title" text="Create Account">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="backToLoginButton" styleClass="secondary-btn" text="Back to Login" onAction="#backToLoginButton" />
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+            </padding>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER">
+            <content>
+                <VBox spacing="30.0">
+                    <children>
+                        <!-- Account Information Section -->
+                        <VBox spacing="20.0" styleClass="form-section">
+                            <children>
+                                <Label styleClass="section-title" text="Account Information">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+
+                                <GridPane hgap="20.0" vgap="15.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+                                        <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                        <RowConstraints />
+                                    </rowConstraints>
+                                    <children>
+                                        <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                            <children>
+                                                <Label styleClass="field-label" text="Username *" />
+                                                <TextField fx:id="usernameField" promptText="Choose a username" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                            <children>
+                                                <Label styleClass="field-label" text="Email Address *" />
+                                                <TextField fx:id="emailField" promptText="Enter your email" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                            <children>
+                                                <Label styleClass="field-label" text="Password *" />
+                                                <PasswordField fx:id="passwordField" promptText="Create a password (min 6 chars)" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                            <children>
+                                                <Label styleClass="field-label" text="Confirm Password *" />
+                                                <PasswordField fx:id="confirmPasswordField" promptText="Confirm your password" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </VBox>
+
+                        <!-- User Type Selection -->
+                        <VBox spacing="15.0" styleClass="form-section">
+                            <children>
+                                <Label styleClass="section-title" text="Account Type">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+
+                                <HBox spacing="30.0">
+                                    <children>
+                                        <RadioButton fx:id="touristRadio" styleClass="user-type-radio" text="Register as Tourist">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="guideRadio" styleClass="user-type-radio" text="Register as Guide">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </RadioButton>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Profile Information Tabs -->
+                        <VBox spacing="15.0" styleClass="form-section">
+                            <children>
+                                <Label styleClass="section-title" text="Profile Information">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+
+                                <TabPane fx:id="profileTabPane" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab fx:id="touristTab" text="Tourist Profile">
+                                            <content>
+                                                <VBox spacing="20.0">
+                                                    <children>
+                                                        <GridPane hgap="20.0" vgap="15.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="ALWAYS" />
+                                                                <ColumnConstraints hgrow="ALWAYS" />
+                                                            </columnConstraints>
+                                                            <children>
+                                                                <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="Full Name *" />
+                                                                        <TextField fx:id="touristNameField" promptText="Enter your full name" />
+                                                                    </children>
+                                                                </VBox>
+
+                                                                <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="Nationality *" />
+                                                                        <ComboBox fx:id="nationalityComboBox" maxWidth="1.7976931348623157E308" promptText="Select nationality" />
+                                                                    </children>
+                                                                </VBox>
+
+                                                                <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="Contact Number *" />
+                                                                        <TextField fx:id="touristContactField" promptText="Phone number" />
+                                                                    </children>
+                                                                </VBox>
+
+                                                                <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="Passport Number" />
+                                                                        <TextField fx:id="passportField" promptText="Passport number" />
+                                                                    </children>
+                                                                </VBox>
+
+                                                                <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="Emergency Contact *" />
+                                                                        <TextField fx:id="emergencyContactField" promptText="Emergency phone number" />
+                                                                    </children>
+                                                                </VBox>
+
+                                                                <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="Emergency Contact Name" />
+                                                                        <TextField fx:id="emergencyNameField" promptText="Emergency contact person" />
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </GridPane>
+
+                                                        <VBox spacing="5.0">
+                                                            <children>
+                                                                <Label styleClass="field-label" text="Address" />
+                                                                <TextArea fx:id="addressArea" prefRowCount="3" promptText="Your address" />
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                    <padding>
+                                                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                    </padding>
+                                                </VBox>
+                                            </content>
+                                        </Tab>
+
+                                        <Tab fx:id="guideTab" text="Guide Profile">
+                                            <content>
+                                                <VBox spacing="20.0">
+                                                    <children>
+                                                        <GridPane hgap="20.0" vgap="15.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="ALWAYS" />
+                                                                <ColumnConstraints hgrow="ALWAYS" />
+                                                            </columnConstraints>
+                                                            <children>
+                                                                <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="Full Name *" />
+                                                                        <TextField fx:id="guideNameField" promptText="Enter your full name" />
+                                                                    </children>
+                                                                </VBox>
+
+                                                                <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="Languages *" />
+                                                                        <TextField fx:id="languagesField" promptText="e.g., English, Nepali, Hindi" />
+                                                                    </children>
+                                                                </VBox>
+
+                                                                <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="Experience (Years) *" />
+                                                                        <TextField fx:id="experienceField" promptText="Years of guiding experience" />
+                                                                    </children>
+                                                                </VBox>
+
+                                                                <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="Contact Number *" />
+                                                                        <TextField fx:id="guideContactField" promptText="Phone number" />
+                                                                    </children>
+                                                                </VBox>
+
+                                                                <VBox spacing="5.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="Specialization *" />
+                                                                        <TextField fx:id="specializationField" promptText="e.g., High Altitude Trekking" />
+                                                                    </children>
+                                                                </VBox>
+
+                                                                <VBox spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                    <children>
+                                                                        <Label styleClass="field-label" text="License Number" />
+                                                                        <TextField fx:id="licenseField" promptText="Guide license number" />
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </GridPane>
+                                                    </children>
+                                                    <padding>
+                                                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                    </padding>
+                                                </VBox>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </VBox>
+
+                        <!-- Messages and Actions -->
+                        <VBox alignment="CENTER" spacing="15.0">
+                            <children>
+                                <Label fx:id="errorLabel" styleClass="error-label" text="Error message" visible="false" wrapText="true" />
+                                <Label fx:id="successLabel" styleClass="success-label" text="Success message" visible="false" wrapText="true" />
+
+                                <Button fx:id="registerButton" styleClass="primary-btn" text="Create Account" onAction="#handleRegister">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Button>
+
+                                <Label styleClass="required-note" text="* Required fields" />
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

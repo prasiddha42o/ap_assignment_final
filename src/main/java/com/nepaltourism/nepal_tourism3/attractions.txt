@@ -1,0 +1,6 @@
+1;;Bhaktapur Durbar Square;;Cultural;;Bhaktapur;;Easy;;1200;;100.0;;1;;All seasons;;false;;Best place in nepal to be at
+2;;Jhapa;;Wildlife;;Jhapa;;Easy;;500;;200.0;;8;;Winter;;false;;Flat area
+3;;Everest Base Camp;;Trekking;;Solukhumbu;;Challenging;;5364;;4500.0;;15;;Spring;;true;;Base camp of the tallest peak in the world
+4;;Annapurna Curcuit;;Trekking;;Annapurna;;Challenging;;5416;;5000.0;;15;;Spring;;false;;
+5;;Kathmandu Durbar Square;;Cultural;;Kathmandu;;Easy;;1400;;100.0;;1;;All Seasons;;false;;
+6;;Pokahara Lakes;;Adventure;;Pokahara;;Easy;;1000;;250.0;;4;;All seasons;;false;;

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.nepaltourism.nepal_tourism3.controller.BookingController">
+   <top>
+      <HBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+         <Label text="Booking Management" style="-fx-font-size: 24px; -fx-font-weight: bold;" HBox.hgrow="ALWAYS"/>
+         <Button text="Back to Dashboard" onAction="#handleBackToDashboard"
+                 style="-fx-font-size: 14px; -fx-background-color: #757575; -fx-text-fill: white;"/>
+      </HBox>
+   </top>
+
+   <left>
+      <VBox spacing="15" style="-fx-padding: 20;">
+         <Label text="Create New Booking" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+         <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+               <ColumnConstraints hgrow="NEVER" minWidth="100"/>
+               <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            <children>
+               <Label text="Tourist:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+               <ComboBox fx:id="touristComboBox" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+               <Label text="Attraction:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+               <ComboBox fx:id="attractionComboBox" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <Label text="Guide:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+               <ComboBox fx:id="guideComboBox" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               <Label text="Start Date:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+               <DatePicker fx:id="startDatePicker" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               <Label text="End Date:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+               <DatePicker fx:id="endDatePicker" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               <Label text="Group Size:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+               <TextField fx:id="groupSizeField" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               <Label text="Festival Discount:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+               <ComboBox fx:id="festivalComboBox" prefWidth="200" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            </children>
+         </GridPane>
+         <Label text="Price Information" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+         <VBox spacing="5">
+            <Label fx:id="basePriceLabel" text="Base Price: $0" />
+            <Label fx:id="discountLabel" text="Festival Discount: 0%" />
+            <Label fx:id="totalPriceLabel" text="Total Price: $0" style="-fx-font-weight: bold;"/>
+         </VBox>
+         <Label text="Safety Information" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+         <TextArea fx:id="safetyInfoArea" editable="false" prefHeight="80" prefWidth="250" />
+         <HBox spacing="10">
+            <Button text="Create Booking" onAction="#addBooking" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            <Button text="Update" onAction="#updateBooking" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+            <Button text="Delete" onAction="#deleteBooking" style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+            <Button text="Clear" onAction="#clearForm" style="-fx-background-color: #607D8B; -fx-text-fill: white;"/>
+         </HBox>
+      </VBox>
+   </left>
+   <center>
+      <VBox spacing="10" style="-fx-padding: 20;">
+         <Label text="All Bookings" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+         <TableView fx:id="bookingTable" prefHeight="400">
+            <columns>
+               <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+               <TableColumn fx:id="touristColumn" text="Tourist" prefWidth="120"/>
+               <TableColumn fx:id="attractionColumn" text="Attraction" prefWidth="150"/>
+               <TableColumn fx:id="guideColumn" text="Guide" prefWidth="120"/>
+               <TableColumn fx:id="startDateColumn" text="Start Date" prefWidth="100"/>
+               <TableColumn fx:id="endDateColumn" text="End Date" prefWidth="100"/>
+               <TableColumn fx:id="groupSizeColumn" text="Group Size" prefWidth="80"/>
+               <TableColumn fx:id="totalPriceColumn" text="Total Price" prefWidth="100"/>
+               <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+               <TableColumn fx:id="festivalColumn" text="Festival Discount" prefWidth="150"/>
+            </columns>
+         </TableView>
+      </VBox>
+   </center>
+</BorderPane>
