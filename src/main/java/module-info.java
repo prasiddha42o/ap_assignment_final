@@ -2,6 +2,7 @@ module com.nepaltourism.nepal_tourism3 {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires org.testng;
 
     opens com.nepaltourism.nepal_tourism3 to javafx.fxml;
     opens com.nepaltourism.nepal_tourism3.controller to javafx.fxml;

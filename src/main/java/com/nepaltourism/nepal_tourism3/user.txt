@@ -1,3 +1,4 @@
 prasiddha,prasiddha708@gmail.com,admin123,admin
 tourist,tourist@gmail.com,tourist123,tourist
-
+prasiddhaabc,asdab@gmail.com,123123,tourist,pasdjas,2167312,123123,Nepali,21312,asdasj
+testuser,test@example.com,testpass,Admin

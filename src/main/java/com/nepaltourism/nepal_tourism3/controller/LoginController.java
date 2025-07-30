@@ -29,6 +29,10 @@ public class LoginController {
         errorLabel.setVisible(false); // Hide error by default
     }
 
+    public boolean isValidLogin(String username, String password) {
+        return UserDAO.validateLogin(username.trim(), password.trim()).isPresent();
+    }
+
     @FXML
     private void handleLogin() {
         String username = usernameField.getText().trim();
