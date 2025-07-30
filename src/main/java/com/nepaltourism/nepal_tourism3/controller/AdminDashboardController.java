@@ -196,7 +196,8 @@ public class AdminDashboardController {
     }
     @FXML
     private void handleTouristManagement(ActionEvent event) {
-        if (!SessionManager.getCurrentUser().isAdmin()) {
+        User currentUser = SessionManager.getCurrentUser();
+        if (!currentUser.isAdmin() && !currentUser.isTourist()) {
             AlertUtil.showErrorAlert("Access Denied", "Only administrators can access festival management");
             return;
         }
